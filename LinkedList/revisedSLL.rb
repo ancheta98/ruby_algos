@@ -15,14 +15,13 @@ class ListNode
     #the reference to the next node will be nil unless we assign it
     @next = nextVal
   end
-  def to_s
+  # method to print out node values
+  def print
     "Node with value: #{@value}"
   end
 end
 # TODO: simplify this code it is somewhat difficult to read. while loops are confusing
 # More granular way to learn this?
-# Head should not contain a value it should only reference the first node which...
-# ...has a value
 class SinglyLinkedList
   # Create a brand new list which will be empty, hence the head is nil
   attr_accessor :head
@@ -46,13 +45,10 @@ class SinglyLinkedList
     # ... and return the very last one
     # while node.next != nil, node will continue to reassign itself to the next node in the list
     # once node.next = nil we know that we are at the tail of the list. Now we return that node 
-    # !!!!!!!!!!!!!!!!!!!!!!!!!! rewrite this code, it is efficient but confusing !!!!!!!!!!!!!!!!!!!!!!
     while current_node.next != nil
       current_node = current_node.next
     end
     return current_node
-
-    # return current_node if !current_node.next while (current_node = current_node.next)
   end
   def print
     current_node = @head
@@ -72,8 +68,7 @@ sll.print
 puts '----------------'
 
 # use stack to reverse the list
-# TODO rewrite stack code to be more beginner friendly
-# Take values from list and push them to a stack
+
 class Stack
   attr_accessor :data
   def initialize
@@ -88,8 +83,10 @@ class Stack
     end
   end
   def pop
-    value = self.data.value
-    self.data = self.data.next_node
+    #change which node is first (the node after the top most node becomes data)
+    value = @data.value
+    @data = @data.next
+    puts "popped node with value #{value}"
     return value
   end
   def print
@@ -100,6 +97,14 @@ class Stack
     end
   end
 end
+
+my_stack = Stack.new
+my_stack.push(10)
+my_stack.push(20)
+my_stack.push(30)
+my_stack.pop
+my_stack.print
+puts '----------------'
 
 def reverse_list(list)
   stack = Stack.new
