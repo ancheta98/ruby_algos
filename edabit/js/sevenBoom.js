@@ -9,7 +9,7 @@ console.log(sevenBoom([76, 55, 44, 32]))
 console.log(sevenBoom([86, 48, 100, 66]))
 // console.log(sevenBoom([2, 55, 60, 97, 86]));
 //todo: rework code so that it works for nums > 100 with a 7 in the tens place
-
+//idea: join all numbs from arr together into a string split by char and then do that
 function sevenBoom(arr) {
   let flag = "there is no 7 in the array";
   //checks each index to see if it is larger than ten, if it is not then we evaluate if it is 7
