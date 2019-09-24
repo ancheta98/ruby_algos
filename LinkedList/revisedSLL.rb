@@ -117,3 +117,33 @@ def reverse_list(list)
   return stack
 end
 reverse_list(sll)
+# reverse a list without the help of another data structure
+
+# use previous and current instead
+def reverse_no_stack(list)
+  # start at the head of the list and
+  # keep three pointers one at current and then at previous and next
+  current_node = list.head
+  prev = nil
+  while current_node
+    # keep track of the node in front of the current node
+    next_node = current_node.next
+    # start reversing
+    current_node.next = prev
+    # iterate forward current and prev
+    prev = current_node
+    current_node = next_node
+  end
+  # once we are at the end of the list, we want to set the last node to be the head
+  list.head = prev
+  list.print
+  return list
+end
+
+sll2 = SinglyLinkedList.new
+sll2.append(11)
+sll2.append(12)
+sll2.append(13)
+# sll2.print
+# puts "------------"
+reverse_no_stack(sll2)
