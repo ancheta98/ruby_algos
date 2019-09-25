@@ -1,6 +1,6 @@
 # Thanks for taking the time to read this!
 
-### Should be noted that it is structured differently than how the bootcamp suggests
+### Should be noted that it is structured differently than how the bootcamp suggests, the file included is my implementation of a Singly Linked List
 
 In the bootcamp example they expect the students to come up with the following:
 
