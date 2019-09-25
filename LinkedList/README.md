@@ -5,11 +5,10 @@
 In the bootcamp example they expect the students to come up with the following:
 
 I find this has confused some students!
-- The list starts out backwards, note that node1, node2, and node3 end up creating a list which is ordered 12 -> 99 -> 37 (node3, node2, node1)
-- The directions say to return a reversed list using a stack so once we try that we get a poppable stack which will return nodes in this order once popped (37 -> 99 -> 12)
+- The list starts out backwards, note that node1, node2, and node3 end up creating a list which is ordered 12 -> 99 -> 37 (node3, node2, node1) See line 31
+- The directions say to return a reversed list using a stack so once we try that we get a poppable stack which will return nodes in this order once popped (37 -> 99 -> 12) See line 64
 - Using the pop method in the stack simply does not work because our list will just reverse the order anyways
-- The "reversed list" returns 12 -> 99 -> 37
-- See lines 32, 54, and 65 for more context
+- The "reversed list" returns 12 -> 99 -> 37 See line 65
 ```class LinkedListNode
  attr_accessor :value, :next_node
  def initialize(value, next_node=nil)
